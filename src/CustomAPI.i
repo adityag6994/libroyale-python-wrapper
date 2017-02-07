@@ -1,8 +1,9 @@
+%module custom_api
+
 %{
 #define SWIG_FILE_WITH_INIT
 %}
 
-%module custom_api
 %include typemaps.i
 %include numpy.i
 
@@ -12,14 +13,6 @@ if (!PyEval_ThreadsInitialized()) {
 }
 
 import_array();
-%}
-
-%{
-#define ROYALE_NEW_API_2_2_0
-#define ROYALE_FINAL_API_2_2_0
-
-#include<CameraDeviceCAPI.h>
-#include<CameraManagerCAPI.h>
 %}
 
 /// Helper functions for converting Python <-> C
